@@ -19,6 +19,8 @@
 }
 .ant-drawer-body{
   padding: 0 !important;
+  width: 100vw !important;
+
 }
 .ant-drawer-content input{
   padding: 0;
@@ -59,4 +61,16 @@
 }
 :where(.css-dev-only-do-not-override-1vtf12y).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item {
   padding: 0px 18px !important;
+}
+.ShopNav {
+  height: 100vw !important;
+  width: 500px !important;
+}
+.close {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+  gap: 30px;
+  justify-content: center;
 }
