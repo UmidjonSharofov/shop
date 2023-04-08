@@ -1,13 +1,62 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+   --orange:rgb(251,119,75);
+   --black: rgb(51,51,51);
+   --white: #fff;
+}
+:where(.css-dev-only-do-not-override-1vtf12y).ant-drawer .ant-drawer-header{
+  display: none !important;
+}
+.ant-drawer-content{
+  height: 50px !important;
+  padding: 0 !important;
+
+}
+.ant-drawer-body{
+  padding: 0 !important;
+}
+.ant-drawer-content input{
+  padding: 0;
+  width: 100%;
+ height: 50px;
+}
+.ant-drawer-content-wrapper {
+  height:50px !important;
+}
+.NbSpan{
+  padding: 0 !important;
+  -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    border-radius: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    color: inherit;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    min-height: 48px;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+:where(.css-dev-only-do-not-override-1vtf12y).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item {
+  padding: 0px 18px !important;
 }
