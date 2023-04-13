@@ -55,7 +55,7 @@ export default function Navbar() {
       key: '3',
     },
     {
-      label: <span onClick={() => Navigate('/LogOut')} className='NbSpan'>  Log Out</span>,
+      label: <span onClick={() => Navigate('/')} className='NbSpan'>  Log Out</span>,
       key: '4',
 
     },

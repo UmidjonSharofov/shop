@@ -12,7 +12,7 @@ export const navbar =[
     path:'/',
     element:<Home/>,
     hidden:false,
-    isPrivate:false,
+    isPrivate:true,
     primary:"true"
 
    },
@@ -22,7 +22,7 @@ export const navbar =[
     path:'/shop',
     element:<Shop/>,
     hidden:false,
-    isPrivate:false, 
+    isPrivate:true, 
    },
    {
     id:3,
@@ -30,19 +30,19 @@ export const navbar =[
     path:'Wishlist/',
     element:<Wishlist/>,
     hidden:true,
-    isPrivate:false
+    isPrivate:true
    },
    {
     id:4,
     title:"Singip",
-    path:'Singip/',
+    path:'/Singip',
     element:<Singip/>,
     hidden:true,
     isPrivate:false
    },
    {
     id:5,
-    title:"wishlist",
+    title:"SingUp",
     path:'/SingUp',
     element:<SingUp/>,
     hidden:true,
@@ -54,6 +54,14 @@ export const navbar =[
     path:'/profile/',
     element:<Profile/>,
     hidden:true,
-    isPrivate:false
+    isPrivate:true
    },
+   {
+      id:7,
+    title:"Log oute",
+    path:'/Home',
+    element:<Home/>,
+    hidden:true,
+    isPrivate:true
+   }
 ]
