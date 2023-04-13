@@ -5,8 +5,9 @@ import { AiOutlineClose, AiOutlineHeart, AiOutlineSearch } from 'react-icons/ai'
 import { GiShoppingCart } from 'react-icons/gi'
 import { FaRegUser } from 'react-icons/fa'
 import { Drawer, Dropdown, } from 'antd'
-import { NavLink, useNavigate } from 'react-router-dom'
-import { Button, Drawer as Drawere, Radio, Space } from 'antd'
+import { NavLink, Outlet, useNavigate } from 'react-router-dom'
+import {  Drawer as Drawere } from 'antd'
+import { navbar } from '../ulits'
 
 export default function Navbar() {
   const Navigate = useNavigate()
@@ -60,17 +61,17 @@ export default function Navbar() {
     },
   ];
   return (
+    <>
     <Container>
       <Wrapper>
         <img src={Nvicon} alt="navicon" />
         <nav>
           <Wrapper.NavItmes>
-            <Wrapper.NavItmes.NavItm >
-              <NavLink to='/'>Home</NavLink>
-            </Wrapper.NavItmes.NavItm>
-            <Wrapper.NavItmes.NavItm primary >
-              <NavLink to='/shop'>Shop</NavLink>
-            </Wrapper.NavItmes.NavItm>
+            {
+              navbar.map((v)=>!v.hidden && (
+                <NavLink style={{color:v.primary?"rgb(251, 119, 75)" : "black"}} primary={v.primary} key={v.id} to={v.path}>{v.title}</NavLink>
+              ))
+            }
           </Wrapper.NavItmes>
         </nav>
         <NavIcons>
@@ -97,12 +98,6 @@ export default function Navbar() {
           >
             <FaRegUser />
           </Dropdown>
-
-
-
-
-
-
           <Drawere
             className='ShopNav'
             title="Drawere with extra actions"
@@ -113,15 +108,14 @@ export default function Navbar() {
 
           >
             <div className='close'>
-              <AiOutlineClose onClick={OnClose} />
+              <AiOutlineClose style={{cursor:'pointer'}} onClick={OnClose} />
               <h3>Products</h3>
             </div>
           </Drawere>
-
-
-
         </NavIcons>
       </Wrapper >
     </Container >
+    <Outlet/>
+    </>
   )
 }
