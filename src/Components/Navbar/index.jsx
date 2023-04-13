@@ -8,6 +8,7 @@ import { Drawer, Dropdown, } from 'antd'
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import {  Drawer as Drawere } from 'antd'
 import { navbar } from '../ulits'
+import {Modal } from 'antd';
 
 export default function Navbar() {
   const Navigate = useNavigate()
@@ -37,7 +38,27 @@ export default function Navbar() {
     setright(e.target.value);
   };
 
+// modal exit log Out
 
+const [exit, setExit] = useState(false);
+const [ConfirmLoading, setConfirmLoading] = useState(false);
+const [modalText, setModalText] = useState('do you want to go');
+const showModal = () => {
+  setExit(true);
+};
+const HandleOk = () => {
+  setModalText('The modal will be closed after two ');
+  setConfirmLoading(true);
+  setTimeout(() => {
+    setExit(false);
+    setConfirmLoading(false);
+    localStorage.removeItem('token')
+    window.location.reload()
+  }, 2000);
+};
+const HandleCancel = () => {
+  setExit(false);
+};
 
 
 
@@ -55,7 +76,7 @@ export default function Navbar() {
       key: '3',
     },
     {
-      label: <span onClick={() => Navigate('/')} className='NbSpan'>  Log Out</span>,
+      label: <span onClick={showModal}  className='NbSpan'>  Log Out</span>,
       key: '4',
 
     },
@@ -113,6 +134,16 @@ export default function Navbar() {
             </div>
           </Drawere>
         </NavIcons>
+       {/* Modal Exit log out*/}
+       <Modal
+        title="Log Out"
+        open={exit}
+        onOk={HandleOk}
+        confirmLoading={ConfirmLoading}
+        onCancel={HandleCancel}
+      >
+        <p>{modalText}</p>
+      </Modal>
       </Wrapper >
     </Container >
     <Outlet/>
