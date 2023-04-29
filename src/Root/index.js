@@ -14,13 +14,13 @@ function Root() {
             (v) =>
               v.isPrivate && (
                 <Route key={v.id} path={v.path} element={ localStorage.getItem('token')?v.element: <Navigate to='/Singip' element={<Singip/>} />} />
-              )
-          )}
+                )
+                )}
 
           {navbar.map(
             (v) =>
-              !v.isPrivate && (
-                <Route key={v.id} path={v.path} element={v.element} />
+            !v.isPrivate && (
+              <Route key={v.id} path={v.path} element={v.element} />
               )
           )}
         </Route>

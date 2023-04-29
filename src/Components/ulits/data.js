@@ -17,6 +17,7 @@ import newArrivals4 from '../../assets/images/new/4.jpg'
 
 
 export const products = [
+  
   {
     id: '1',
     title: 'Sports Boots',
@@ -197,7 +198,7 @@ export const products = [
     colors: ['red', 'black', 'blue', 'white'],
     description: 'If you too are a t-shirt seller and sell them online, you must ensure you’re displaying them right. In other words, you have a higher chance of customers buying your t-shirts if you use a fitting product description. A good product description can get your business more customers.',
     quantity: 1,
-    liked: false,
+    liked: true,
     featuredImage: shoesImage2,
     category: 'sports',
     sizes: ['X', 'S', 'XX', 'SS'],

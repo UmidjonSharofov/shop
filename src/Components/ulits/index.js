@@ -1,4 +1,6 @@
+import { Footer } from "../Footer";
 import Home from "../Home";
+import Praduct from "../Praduct";
 import Shop from "../Shop";
 import SingUp from "../SingUp";
 import Singip from "../Singip";
@@ -63,5 +65,12 @@ export const navbar =[
     element:<Home/>,
     hidden:true,
     isPrivate:true
-   }
+   },{
+      id:8,
+    title:"praduc",
+    path:'/shop/:id',
+    element:<Praduct/>,
+    hidden:true,
+    isPrivate:true
+   },
 ]
