@@ -2,13 +2,13 @@ import { createContext, useContext, useReducer } from "react";
 import { INITIAL_STATE, reducer } from "./reduser";
 const ProductContext = createContext();
 
-export const UseProductContext = () => useContext(ProductContext);
+export const UseProductContext = () => useContext(ProductContext);  
 
 
 function ProductContextProvider({ children }) {
-  const [state, dispatch] = useReducer(() => reducer, INITIAL_STATE);
+  const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
   return (
-    <ProductContext.Provider value={INITIAL_STATE}>{children}</ProductContext.Provider>
+    <ProductContext.Provider value={{state, dispatch}}>{children}</ProductContext.Provider>
   );
 }
 
